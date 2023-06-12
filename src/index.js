@@ -1,17 +1,12 @@
 import './style.css';
-import printME from './print.js';
+// import printME from './menu/menu.js';
 
-function component() {
+function component(name) {
     const element = document.createElement('div');
-    const btn = document.createElement('button');
 
     element.innerHTML = 'Hello World!';
-    element.classList.add('hello');
+    element.classList.add(name);
 
-    btn.textContent = 'Click Me!';
-    btn.onclick = printME;
-
-    element.appendChild(btn);
 
     return element;
 }
