@@ -1,5 +1,139 @@
-.hello {
-    background-color: blue;
+@font-face {
+  font-family: 'Abril Fatface';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./asset/fonts/AbrilFatface-Regular.ttf) format('woff2');
+}
+
+@font-face {
+    font-family: 'Bagel Fat One';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./asset/fonts/BagelFatOne-Regular.ttf) format('woff2');
+}
+
+@font-face {
+    font-family: 'Gasoek One';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./asset/fonts/GasoekOne-Regular.ttf) format('woff2');
+}
+
+@font-face {
+    font-family: 'Grandiflora One';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./asset/fonts/GrandifloraOne-Regular.ttf) format('woff2');
+}
+
+@font-face {
+    font-family: 'Shadows Into Light';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./asset/fonts/ShadowsIntoLight-Regular.ttf) format('woff2');
+}
+
+@font-face {
+    font-family: 'Yeseva One';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./asset/fonts/YesevaOne-Regular.ttf) format('woff2');
+}
+
+
+body {
+    margin: 0;
+    background-image: url('./asset/img/background1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.content {
+    height: 100vh;
     color: white;
     font-size: 20px;
 }
+
+
+.nav,
+.main,
+.foot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navBack,
+.footBack {
+    z-index: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(40px);
+    box-shadow: 3px 11px 21px 10px rgba(0,0,0,0.39);
+    -webkit-box-shadow: 3px 11px 21px 10px rgba(0,0,0,0.39);
+    -moz-box-shadow: 3px 11px 21px 10px rgba(0,0,0,0.39);
+}
+
+.nav {
+    z-index: 1;
+    position: sticky;
+    top: 10px;
+    border-radius: 20px;
+    gap: 20px;
+    height: 5%;
+    width: 40%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.main {
+    height: 85%;
+    margin: 0;
+    font-size: 80px;
+    font-family: 'Abril Fatface', cursive;
+    font-family: 'Bagel Fat One', cursive;
+    font-family: 'Yeseva One', cursive;
+}
+
+.foot {
+    position: relative;
+    z-index: 1;
+    gap: 20px;
+    height: 5%;
+    width: 40%;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 20px;
+
+}
+
+button {
+    z-index: 1;
+    color: white;
+    background-color: rgba(105, 105, 105, 0.422);  
+    border-radius: 30px;
+    border: 0;
+    padding: 5px 10px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgba(62, 62, 62, 0.422);  
+
+}
+
+/* .homeBtn,
+.menuBtn,
+.contactBtn,
+.igBtn,
+.fbBtn,
+.googleBtn */
