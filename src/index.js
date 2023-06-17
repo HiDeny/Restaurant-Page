@@ -1,6 +1,7 @@
 import './style.css';
 import * as component from './components/components.js';
-import { menuDiv } from './menu/menu.js'
+import { menuDiv } from './menu/menu.js';
+import { contactsDiv } from './contact/contact.js';
 
 
 //* MASTER
@@ -33,6 +34,10 @@ nav.append(menuBtn);
 
 const concatBtn = component.btn('contactBtn');
 concatBtn.textContent = 'CONTACT';
+concatBtn.onclick = () => {
+    main.replaceChild(contactsDiv(), main.firstChild);
+    main.firstChild.append(component.div('blurBack'));
+};
 nav.append(concatBtn);
 
 //* MIDDLE
@@ -60,15 +65,12 @@ const foot = component.div('foot');
 content.append(foot);
 foot.append(component.div('blurBack'));
 
-const igBtn = component.btn('igBtn');
-igBtn.textContent = 'Instagram';
+const igBtn = component.btn('igBtn', 'https://www.instagram.com');
 foot.append(igBtn);
 
-const fbBtn = component.btn('fbBtn');
-fbBtn.textContent = 'Facebook';
+const fbBtn = component.btn('fbBtn', 'https://www.facebook.com');
 foot.append(fbBtn);
 
 
-const googleBtn = component.btn('googleBtn');
-googleBtn.textContent = 'Google';
+const googleBtn = component.btn('googleBtn', 'https://www.google.com');
 foot.append(googleBtn);

@@ -8,21 +8,36 @@ const componentDiv = (className) => {
 };
 
 // Btn element
-const componentBtn = (className) => {
+const componentBtn = (className, url) => {
 	const btn = document.createElement('button');
-
 	btn.classList.add(className);
-
-	return btn;
+	if(url) {
+		const href = document.createElement('a');
+		href.setAttribute('href', url);
+		href.append(btn);
+		return href;
+	} else {
+		return btn;
+	}
 };
 
 // Text component
-const componentTxt = (className) => {
+const componentTxt = (className, textDisplayed) => {
 	const txt = document.createElement('p');
 
 	txt.classList.add(className);
+	txt.textContent = textDisplayed;
 
 	return txt;
 };
 
-export { componentDiv as div, componentBtn as btn, componentTxt as txt };
+const menuComponent = (type, name, ingredients) => {
+    const component = componentDiv('menuComponent');
+    component.append(componentTxt('Type', type));
+    component.append(componentTxt('Name', name))
+    component.append(componentTxt('Ingredients', ingredients))
+
+    return component;
+}
+
+export { componentDiv as div, componentBtn as btn, componentTxt as txt, menuComponent as menuCmp };

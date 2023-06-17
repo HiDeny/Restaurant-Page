@@ -1,25 +1,21 @@
 import * as component from '../components/components.js';
 
 
-
 export const menuDiv = () => {
     // Main
     const menu = component.div('menu');    
 
     // Starter
-    const menuStart = component.div('menuStart');
-    menuStart.textContent = 'Starter';
-    menu.append(menuStart);
+    const starter = component.menuCmp('Starter', 'Starter Name', ['Carrot', 'Apple','Potato']);
+    menu.append(starter);
 
     // Main
-    const menuMain = component.div('menuMain');
-    menuMain.textContent = 'Main';
-    menu.append(menuMain);
+    const main = component.menuCmp('Main', 'Main Name', ['Pasta', 'Tomato','Basil']);
+    menu.append(main);
 
     // Desert
-    const menuDes = component.div('menuDes');
-    menuDes.textContent = 'Desert';
-    menu.append(menuDes);
+    const desert = component.menuCmp('Desert', 'Desert Name', ['Coconut', 'Banana','Love']);
+    menu.append(desert);
 
     return menu;
 }
