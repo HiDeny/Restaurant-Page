@@ -397,6 +397,20 @@
     src: url(./asset/fonts/YesevaOne-Regular.ttf) format('woff2');
 }
 
+@keyframes slide-right {
+  0% {left: 100% }
+  40% {left: -20px}
+  100% { left: 0px }
+}
+
+@keyframes slide-left {
+  0% {right: 100% }
+  40% {right: -20px}
+  100% { right: 0px }
+}
+
+
+
 html {
     font-family: Helvetica;
 }
@@ -476,6 +490,9 @@ body {
     justify-content: center;
     align-items: center; */
     font-size: 6rem;
+    position: relative;
+    animation-name: slide-left;
+    animation-duration: 2s;
 }
 
 .logoPt1,
@@ -491,11 +508,14 @@ body {
     position: relative;
     border-radius: 20px;
     padding: 5px;
-    height: 35rem;
+    height: 70%;
     width:  40rem;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     gap: 10px;
+
+    animation-name: slide-right;
+    animation-duration: 2s;
 }
 
 .menuComponent { 
