@@ -33,7 +33,7 @@ nav.append(menuBtn);
 
 
 const concatBtn = component.btn('contactBtn');
-concatBtn.textContent = 'CONTACT';
+concatBtn.textContent = 'ABOUT US';
 concatBtn.onclick = () => {
     main.replaceChild(contactsDiv(), main.firstChild);
     main.firstChild.append(component.div('blurBack'));

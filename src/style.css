@@ -412,7 +412,10 @@
 
 
 html {
+    font-size: 16px;
     font-family: Helvetica;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -442,7 +445,7 @@ body {
     z-index: -1;
     position: absolute;
     background-color: rgba(255, 255, 255, .15);  
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(15px);
     box-shadow: 3px 11px 21px 10px rgba(0,0,0,0.39);
     -webkit-box-shadow: 3px 11px 21px 10px rgba(0,0,0,0.39);
     -moz-box-shadow: 3px 11px 21px 10px rgba(0,0,0,0.39);
@@ -463,8 +466,8 @@ body {
 
 .nav > button {
   color: white; 
-  background-color: rgba(145, 145, 145, 0.21);  
   border-radius: 100px;
+  background-color: rgba(145, 145, 145, 0.21);  
   border: solid 1px rgba(255, 255, 255, .15);
   padding: 0.4rem 0.8rem;
   backdrop-filter: blur(15px);
@@ -480,15 +483,10 @@ body {
 .main {
     height: 85%;
     margin: 0;
-    font-family: 'Abril Fatface', cursive;
-    font-family: 'Bagel Fat One', cursive;
-    font-family: 'Yeseva One', cursive;
 }
 
 .intro {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+    font-family: 'Bagel Fat One', cursive;
     font-size: 6rem;
     position: relative;
     animation-name: slide-left;
@@ -502,14 +500,19 @@ body {
     margin-bottom: 10px;
 }
 
-.menu,
-.contacts { 
+.logoPt2 {
+  position: relative;
+  left: 25px;
+}
+
+
+.menu { 
     overflow: hidden;
     position: relative;
     border-radius: 20px;
     padding: 5px;
     height: 70%;
-    width:  40rem;
+    width:  30rem;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     gap: 10px;
@@ -518,17 +521,72 @@ body {
     animation-duration: 2s;
 }
 
+.contacts {
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  padding: 5px;
+  height: 70%;
+  width:  40rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+
+  animation-name: slide-right;
+  animation-duration: 2s;
+}
+
+.aboutus {
+  background-color: rgba(145, 145, 145, 0.21);  
+  border: solid 1px rgba(255, 255, 255, .15);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.restInfo {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+
+  background-color: rgba(145, 145, 145, 0.21);  
+  border: solid 1px rgba(255, 255, 255, .15);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.reservationBtn {
+  color: white;
+  width: 8rem;
+  height: 2rem; 
+  border-radius: 100px;
+  background-color: rgba(145, 145, 145, 0.21);  
+  border: solid 1px rgba(255, 255, 255, .15);
+  padding: 0.4rem 0.8rem;
+  /* backdrop-filter: blur(15px); */
+  justify-self: center;
+  align-self: center;
+  grid-column: span 2;
+}
+
 .menuComponent { 
     display: flex;
     flex-direction: column;
     justify-content: space-around; 
     text-align: center;
-    background-color: rgba(39, 39, 39, 0.2);
-    backdrop-filter: blur(25px);
-    border: solid 1px rgba(255, 255, 255, .15);
-    border-radius: 20px;
+    border-bottom: solid 1px rgba(255, 255, 255, .15);
     padding: 10px;
     margin: 5px;
+}
+
+.menu > .menuComponent {
+    background-color: rgba(39, 39, 39, 0.2);
+    border: solid 1px rgba(255, 255, 255, .15);
+    background-color: rgba(145, 145, 145, 0.21);  
+    backdrop-filter: blur(25px);
+    border-radius: 20px;
 }
 
 .menuComponent > p {
@@ -586,3 +644,14 @@ body {
 .contactBtn,
 */
 
+/* Inline #1 | file:///Users/hidenny/CODE/TheOdinProject/repos/Restaurant-Page/dist/index.html */
+
+.reservation {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+}
+
+.reservationBtn {
+  grid-row: span 2;
+}
