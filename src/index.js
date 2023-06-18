@@ -18,6 +18,7 @@ nav.append(component.div('blurBack'));
 
 const homeBtn = component.btn('homeBtn');
 homeBtn.textContent = 'HOME';
+homeBtn.setAttribute('id', 'activeBtn');
 homeBtn.onclick = () => {
     removeActive();
     homeBtn.setAttribute('id', 'activeBtn');
@@ -81,8 +82,7 @@ foot.append(googleBtn);
 // Algoritm
 const removeActive = () => {
     const pastActive = document.querySelector('#activeBtn');
-    if (pastActive) {
-       pastActive.removeAttribute('id', 'activeBtn')
-    }
+          pastActive.removeAttribute('id', 'activeBtn')
+          
     return pastActive;
 }
