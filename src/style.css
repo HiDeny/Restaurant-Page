@@ -403,13 +403,21 @@
   100% { left: 0px }
 }
 
+.slide-right {
+  animation-name: slide-right;
+  animation-duration: 2s;
+}
+
 @keyframes slide-left {
   0% {right: 100% }
   40% {right: -20px}
   100% { right: 0px }
 }
 
-
+.slide-left {
+  animation-name: slide-left;
+  animation-duration: 2s;
+}
 
 html {
     font-size: 16px;
@@ -445,7 +453,7 @@ body {
     z-index: -1;
     position: absolute;
     background-color: rgba(255, 255, 255, .15);  
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
     box-shadow: 3px 11px 21px 10px rgba(0,0,0,0.39);
     -webkit-box-shadow: 3px 11px 21px 10px rgba(0,0,0,0.39);
     -moz-box-shadow: 3px 11px 21px 10px rgba(0,0,0,0.39);
@@ -462,6 +470,7 @@ body {
     width: 17.7rem;
     margin: auto;
     margin-top: 20px;  
+    z-index: 2;
 }
 
 .nav > button {
@@ -475,9 +484,12 @@ body {
 
 .nav > button:hover {
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.301); 
+  background-color: rgba(255, 255, 255, 0.301);
+}
 
-
+#activeBtn {
+  background-color: black;
+  color: white;
 }
 
 .main {
@@ -517,8 +529,8 @@ body {
     grid-template-rows: repeat(3, 1fr);
     gap: 10px;
 
-    animation-name: slide-right;
-    animation-duration: 2s;
+    /* animation-name: slide-right;
+    animation-duration: 2s; */
 }
 
 .contacts {
@@ -530,6 +542,7 @@ body {
   width:  40rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 70px;
   gap: 10px;
 
   animation-name: slide-right;
@@ -547,7 +560,7 @@ body {
 
 .restInfo {
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 2fr 1fr;
 
   background-color: rgba(145, 145, 145, 0.21);  
   border: solid 1px rgba(255, 255, 255, .15);
@@ -555,6 +568,10 @@ body {
   border-radius: 20px;
   padding: 10px;
   margin: 5px;
+}
+
+.restInfo > div:last-child {
+  border: 0;
 }
 
 .reservationBtn {
@@ -570,6 +587,13 @@ body {
   align-self: center;
   grid-column: span 2;
 }
+
+.reservation {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+}
+
 
 .menuComponent { 
     display: flex;
@@ -602,7 +626,7 @@ body {
     margin: auto;
     margin-bottom: 10px;
     border-radius: 20px;
-
+    z-index: 2;
 }
 
 .foot > button,
@@ -643,15 +667,3 @@ body {
 .menuBtn,
 .contactBtn,
 */
-
-/* Inline #1 | file:///Users/hidenny/CODE/TheOdinProject/repos/Restaurant-Page/dist/index.html */
-
-.reservation {
-  grid-column: span 2;
-  display: flex;
-  justify-content: center;
-}
-
-.reservationBtn {
-  grid-row: span 2;
-}

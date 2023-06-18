@@ -9,7 +9,8 @@ export const contactsDiv = () => {
     contacts.append(aboutUs);
     
     // Mission
-    const mission = component.txt('mission', 'This is our mission!')
+    const mission = component.txt('mission', 'Our Mission');
+    const missionDesc = component.txt('description', '')
     aboutUs.append(mission);
     
     // Restaurant
@@ -17,6 +18,7 @@ export const contactsDiv = () => {
     contacts.append(restInfo);
     // Location
     const location = component.menuCmp('Location', 'Some Location', 'Opening Hours');
+    location.classList.add('location');
     restInfo.append(location);
 
     // Contacts, Phone, email, 
