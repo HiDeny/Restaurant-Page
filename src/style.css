@@ -556,8 +556,7 @@ body {
 
 
 
-.category,
-.mission {
+.category {
   font-family: 'Bagel Fat One';
   text-align: center;
   font-size: 1.3rem;
@@ -618,13 +617,51 @@ body {
   margin: 5px;
 }
 
+.aboutus > .description {
+  padding: 10px;
+}
+
+.missionCont {
+  border-bottom: solid 1px rgba(255, 255, 255, .15);
+  padding-bottom: 15px;
+}
+
+.missionCont:last-child {
+  border: 0;
+}
+
+.location {
+  margin: 5px;
+  border-bottom: solid 1px rgba(255, 255, 255, .15);
+
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+}
+
+div.location > a {
+  justify-self: center;
+}
+ 
+.locationPoll {
+  color: white; 
+  border-radius: 100px;
+  background-color: rgba(145, 145, 145, 0.21);  
+  border: solid 1px rgba(255, 255, 255, .15);
+  padding: 0.4rem 0.8rem;
+  backdrop-filter: blur(15px);
+}
+
+.locationPoll:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.301);
+}
+
 
 .restInfo {
   display: grid;
   grid-template-rows: 2fr 1fr;
 
   background-color: rgba(145, 145, 145, 0.21);  
-  border: solid 1px rgba(255, 255, 255, .15);
   backdrop-filter: blur(25px);
   border-radius: 20px;
   padding: 10px;
@@ -634,25 +671,6 @@ body {
 .restInfo > div:last-child {
   border: 0;
 }
-
-/* .reservationBtn {
-  color: white;
-  width: 8rem;
-  height: 2rem; 
-  border-radius: 100px;
-  background-color: rgba(145, 145, 145, 0.21);  
-  border: solid 1px rgba(255, 255, 255, .15);
-  padding: 0.4rem 0.8rem;
-  justify-self: center;
-  align-self: center;
-  grid-column: span 2;
-} */
-/* 
-.reservation {
-  grid-column: span 2;
-  display: flex;
-  justify-content: center;
-} */
 
 
 .foot {

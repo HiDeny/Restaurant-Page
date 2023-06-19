@@ -9,7 +9,7 @@ export const contactsDiv = () => {
     contacts.append(aboutUs);
     
     // Mission
-    const mission = component.txt('mission', 'Our Mission');
+    const mission = component.txt('category', 'Our Mission');
     const missionDesc = component.div('description');
 
     const missionPt1 = component.txt('missionCont', 'Introducing Vegan Food Truck, where sustainability, flavor, and health come together on wheels! Our electric-powered food truck roams the streets, bringing you a delectable array of plant-based dishes.');
@@ -27,8 +27,26 @@ export const contactsDiv = () => {
     // Restaurant
     const restInfo = component.div('restInfo');
     contacts.append(restInfo);
+    
     // Location
-    const location = component.menuCmp('Location', 'Some Location', 'Opening Hours');
+    const location = component.div('location');
+    location.append(component.txt('category', 'Finding us is part of the fun!'));
+
+    const locationDesc = component.div('description');
+    
+    locationDesc.append(component.txt('locationCont', 'Participate in our interactive poll and determine the location of our food truck next week.'));
+    
+    locationDesc.append(component.txt('locationCont', 'We love surprising different neighborhoods and bringing the vegan experience directly to you.'));
+
+    location.append(locationDesc);
+    location.append(component.btn('locationPoll', 'https://take.quiz-maker.com/poll4850209x621c20Ea-151', 'WHERE NEXT?'));
+
+    
+    // const openingHours = component.div('hours');
+    // openingHours.append(component.txt('category','Opening Hours'));
+    // location.append(openingHours);
+
+
     location.classList.add('location');
     restInfo.append(location);
 

@@ -8,9 +8,10 @@ const componentDiv = (className) => {
 };
 
 // Btn element
-const componentBtn = (className, url) => {
+const componentBtn = (className, url, name) => {
 	const btn = document.createElement('button');
 	btn.classList.add(className);
+	btn.textContent = name;
 	if(url) {
 		const href = document.createElement('a');
 		href.setAttribute('href', url);
