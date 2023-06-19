@@ -31,11 +31,13 @@ const componentTxt = (className, textDisplayed) => {
 	return txt;
 };
 
-const menuComponent = (type, name, ingredients) => {
-    const component = componentDiv('menuComponent');
-    component.append(componentTxt('Type', type));
-    component.append(componentTxt('Name', name))
-    component.append(componentTxt('Ingredients', ingredients))
+const menuComponent = (category, name, list, price) => {
+    const component = componentDiv('componentDiv');
+    component.append(componentTxt('category', category));
+    component.append(componentTxt('name', name))
+    component.append(componentTxt('list', list))
+    component.append(componentTxt('price', price))
+
 
     return component;
 }
