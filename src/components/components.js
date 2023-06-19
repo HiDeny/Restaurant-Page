@@ -12,7 +12,7 @@ const componentBtn = (className, url, name) => {
 	const btn = document.createElement('button');
 	btn.classList.add(className);
 	btn.textContent = name;
-	if(url) {
+	if (url) {
 		const href = document.createElement('a');
 		href.setAttribute('href', url);
 		href.append(btn);
@@ -33,14 +33,18 @@ const componentTxt = (className, textDisplayed) => {
 };
 
 const menuComponent = (category, name, list, price) => {
-    const component = componentDiv('componentDiv');
-    component.append(componentTxt('category', category));
-    component.append(componentTxt('name', name))
-    component.append(componentTxt('list', list))
-    component.append(componentTxt('price', price))
+	const component = componentDiv('componentDiv');
+	component.append(componentTxt('category', category));
+	component.append(componentTxt('name', name));
+	component.append(componentTxt('list', list));
+	component.append(componentTxt('price', price));
 
+	return component;
+};
 
-    return component;
-}
-
-export { componentDiv as div, componentBtn as btn, componentTxt as txt, menuComponent as menuCmp };
+export {
+	componentDiv as div,
+	componentBtn as btn,
+	componentTxt as txt,
+	menuComponent as menuCmp,
+};
