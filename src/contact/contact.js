@@ -3,7 +3,7 @@ import * as component from '../components/components.js';
 export const contactsDiv = () => {
 	// Main div
 	const contacts = component.div('contacts');
-    // contacts.classList.add('slide-right');
+	// contacts.classList.add('slide-right');
 
 	// About us section
 	const aboutUs = component.div('aboutus');
@@ -38,6 +38,28 @@ export const contactsDiv = () => {
 	const restInfo = component.div('restInfo');
 	contacts.append(restInfo);
 
+	// Contact
+	const contact = component.div('contact');
+	contact.append(component.txt('category', 'Contact'));
+
+	const contactDesc = component.div('description');
+
+    const phoneNum = document.createElement('a');
+          phoneNum.setAttribute('href', 'tel:+27 123 4567 890');
+          phoneNum.textContent = '+27 123 4567 890';
+	
+    contactDesc.append(phoneNum);
+
+
+    const email = document.createElement('a');
+          email.setAttribute('href', 'mailto:info@veganfoodtrucksa.com');
+          email.textContent = 'info@veganfoodtrucksa.com';
+	
+    contactDesc.append(email);
+
+    contact.append(contactDesc);
+	restInfo.append(contact);
+
 	// Location
 	const location = component.div('location');
 	location.append(component.txt('category', 'Finding us is part of the fun!'));
@@ -59,7 +81,8 @@ export const contactsDiv = () => {
 	);
 
 	location.append(locationDesc);
-	location.append(
+	
+    location.append(
 		component.btn(
 			'locationPoll',
 			'https://take.quiz-maker.com/poll4850209x621c20Ea-151',
@@ -67,16 +90,7 @@ export const contactsDiv = () => {
 		)
 	);
 
-	// const openingHours = component.div('hours');
-	// openingHours.append(component.txt('category','Opening Hours'));
-	// location.append(openingHours);
-
-	location.classList.add('location');
 	restInfo.append(location);
-
-	// Contacts, Phone, email,
-	const contact = component.menuCmp('Contact', 'Phone', 'email');
-	restInfo.append(contact);
 
 	return contacts;
 };

@@ -565,11 +565,11 @@ body {
   font-family: 'Bagel Fat One';
   text-align: center;
   font-size: 1.3rem;
-  position: relative;
-  bottom: 0.4rem;
 }
 
 .menu > .componentDiv > .category {
+  position: relative;
+  bottom: 0.4rem;
   grid-column: span 2;
 }
 
@@ -593,7 +593,7 @@ body {
   grid-column: 2;
   grid-row: 2 / span 2;
   position: relative;
-  bottom: 1.6rem;
+  bottom: 1rem;
   justify-self: center;
 }
 
@@ -612,6 +612,9 @@ body {
 }
 
 .aboutus {
+  display: grid;
+  grid-template-rows: 0.3fr auto;
+
   background-color: rgba(145, 145, 145, 0.21);  
   border: solid 1px rgba(255, 255, 255, .15);
   backdrop-filter: blur(25px);
@@ -622,33 +625,123 @@ body {
 
 .aboutus > .description {
   padding: 10px;
+
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.aboutus > .category {
+  align-self: end;
+  margin: 0;
 }
 
 .missionCont {
   border-bottom: solid 1px rgba(255, 255, 255, .15);
-  padding-bottom: 15px;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10%;
 }
 
 .missionCont:last-child {
   border: 0;
 }
 
-.location {
+.restInfo {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+
+  background-color: rgba(145, 145, 145, 0.21);  
+  border: solid 1px rgba(255, 255, 255, .15);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+  padding: 10px;
   margin: 5px;
+  justify-items: center;
+}
+
+.contact {
+  border-bottom: solid 1px rgba(255, 255, 255, .15);
+  height: 100%;
+  width: 50%;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact > .description {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.5rem
+}
+
+.description > a {
+  color: white;
+  text-decoration: none;
+}
+
+.description > a:visited {
+  color: white;
+}
+
+.description > a:hover {
+  color: rgba(202, 202, 202, 0.88);
+}
+
+.restInfo > div:last-child {
+  border: 0;
+}
+
+.location {
   border-bottom: solid 1px rgba(255, 255, 255, .15);
 
   display: grid;
   grid-template-rows: 1fr 2fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.location > .category {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.location > .description {
+  display: grid;
+  height: 100%;
+  grid-template-rows: 1fr 1fr;
+  padding: 0 1rem;
+}
+
+.locationCont {
+  border-bottom: solid 1px rgba(255, 255, 255, .15);
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  margin: 0 20%;
+}
+
+.locationCont:last-child {
+  border: 0;
 }
 
 div.location > a {
-  justify-self: center;
+  align-self: baseline;
+  margin-top: 1rem;
 }
  
 .locationPoll {
   color: white; 
   border-radius: 100px;
-  background-color: rgba(145, 145, 145, 0.21);  
+  background-color: rgba(89, 89, 89, 0.1); 
   border: solid 1px rgba(255, 255, 255, .15);
   padding: 0.4rem 0.8rem;
   backdrop-filter: blur(15px);
@@ -657,22 +750,6 @@ div.location > a {
 .locationPoll:hover {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.301);
-}
-
-
-.restInfo {
-  display: grid;
-  grid-template-rows: 2fr 1fr;
-
-  background-color: rgba(145, 145, 145, 0.21);  
-  backdrop-filter: blur(25px);
-  border-radius: 20px;
-  padding: 10px;
-  margin: 5px;
-}
-
-.restInfo > div:last-child {
-  border: 0;
 }
 
 /*! FOOT */
