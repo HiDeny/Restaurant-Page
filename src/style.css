@@ -349,14 +349,6 @@
   }
 /* !------------------ My CSS ------------------! */
 
-/* @font-face {
-  font-family: 'Abril Fatface';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(./asset/fonts/AbrilFatface-Regular.ttf) format('woff2');
-} */
-
 @font-face {
     font-family: 'Bagel Fat One';
     font-style: normal;
@@ -365,37 +357,6 @@
     src: url(./asset/fonts/BagelFatOne-Regular.ttf) format('woff2');
 }
 
-/* @font-face {
-    font-family: 'Gasoek One';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(./asset/fonts/GasoekOne-Regular.ttf) format('woff2');
-} */
-
-/* @font-face {
-    font-family: 'Grandiflora One';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(./asset/fonts/GrandifloraOne-Regular.ttf) format('woff2');
-} */
-
-/* @font-face {
-    font-family: 'Shadows Into Light';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(./asset/fonts/ShadowsIntoLight-Regular.ttf) format('woff2');
-} */
-
-/* @font-face {
-    font-family: 'Yeseva One';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(./asset/fonts/YesevaOne-Regular.ttf) format('woff2');
-} */
 
 @keyframes slide-right {
   0% {left: 100% }
@@ -597,9 +558,9 @@ body {
   justify-self: center;
 }
 
-/*! CONTACTS */
+/*! About us */
 
-.contacts {
+.aboutUsContainer {
   overflow: hidden;
   position: relative;
   border-radius: 20px;
@@ -782,14 +743,14 @@ div.location > a {
 }
 
 .igBtn {
-  background-image: url('./asset/img/icons8-instagram-40.png');
+  background-image: url('./asset/img/instagram.png');
 }
 .fbBtn {
-  background-image: url('./asset/img/icons8-facebook-final.png');
+  background-image: url('./asset/img/facebook.png');
 
 }
 .googleBtn {
-  background-image: url('./asset/img/icons8-google-40.png');
+  background-image: url('./asset/img/google.png');
 }
 
 .igBtn,

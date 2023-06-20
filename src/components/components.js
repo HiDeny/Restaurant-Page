@@ -8,7 +8,7 @@ const componentDiv = (className) => {
 };
 
 // Btn element
-const componentBtn = (className, url, name) => {
+const componentBtn = (className, name, url) => {
 	const btn = document.createElement('button');
 	btn.classList.add(className);
 	btn.textContent = name;
