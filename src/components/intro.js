@@ -1,18 +1,15 @@
-import * as component from './components.js';
+import { div, txt } from './components.js';
 
-export const introDiv = () => {
-	const introDiv = component.div('intro');
+export default function introDiv() {
+	const introDiv = div('intro');
 
-	const logoPt1 = component.txt('logoPt1');
-	logoPt1.textContent = 'Vegan';
+	const logoPt1 = txt('logoPt1', 'Vegan');
 	introDiv.append(logoPt1);
 
-	const logoPt2 = component.txt('logoPt2');
-	logoPt2.textContent = 'Food';
+	const logoPt2 = txt('logoPt2', 'Food');
 	introDiv.append(logoPt2);
 
-	const logoPt3 = component.txt('logoPt3');
-	logoPt3.textContent = 'Truck';
+	const logoPt3 = txt('logoPt3', 'Truck');
 	introDiv.append(logoPt3);
 
 	return introDiv;

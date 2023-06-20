@@ -1,8 +1,10 @@
 // Div element
-const componentDiv = (className) => {
+const componentDiv = (className, id) => {
 	const element = document.createElement('div');
-
 	element.classList.add(className);
+	if (id) {
+		element.setAttribute('id', id);
+	}
 
 	return element;
 };
