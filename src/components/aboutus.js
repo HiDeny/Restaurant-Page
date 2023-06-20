@@ -1,82 +1,68 @@
-import * as component from './components.js';
+import {div, txt, phone, email, btn} from './components.js';
 
-export const aboutUsDiv = () => {
-	
-	// Main div
-	const aboutUsContainer = component.div('aboutUsContainer');
+export default function aboutUsDiv() {
+	const aboutUsContainer = div('aboutUsContainer');
 
 	// Background
-	aboutUsContainer.append(component.div('blurBack'));
+	aboutUsContainer.append(div('blurBack'));
 
-	// About us section
-	const aboutUs = component.div('aboutus');
-	aboutUsContainer.append(aboutUs);
+	//* About us section
+	const aboutUs = div('aboutus');
+	aboutUs.append(txt('category', 'Our Mission'));
 
-	// Mission
-	const mission = component.txt('category', 'Our Mission');
-	const missionDesc = component.div('description');
+	// Mission description
+	const missionDesc = div('description');
 
-	const missionPt1 = component.txt(
+	const missionP1 = txt(
 		'missionCont',
 		'Introducing Vegan Food Truck, where sustainability, flavor, and health come together on wheels! Our electric-powered food truck roams the streets, bringing you a delectable array of plant-based dishes.'
 	);
-	missionDesc.append(missionPt1);
+	missionDesc.append(missionP1);
 
-	const missionPt2 = component.txt(
+	const missionP2 = txt(
 		'missionCont',
 		'With a focus on reducing waste and promoting eco-conscious practices, we craft our menu using locally sourced, organic ingredients.'
 	);
-	missionDesc.append(missionPt2);
+	missionDesc.append(missionP2);
 
-	const missionPt3 = component.txt(
+	const missionP3 = txt(
 		'missionCont',
 		'Join us on this culinary adventure as we serve up delicious, guilt-free meals with a clean and green approach.'
 	);
-	missionDesc.append(missionPt3);
+	missionDesc.append(missionP3);
 
-	aboutUs.append(mission);
 	aboutUs.append(missionDesc);
+	aboutUsContainer.append(aboutUs);
 
-	// Restaurant
-	const restInfo = component.div('restInfo');
-	aboutUsContainer.append(restInfo);
+	//* Restaurant information
+	const restInfo = div('restInfo');
 
 	// Contact
-	const contact = component.div('contact');
-	contact.append(component.txt('category', 'Contact'));
+	const contact = div('contact');
+	contact.append(txt('category', 'Contact'));
 
-	const contactDesc = component.div('description');
-
-	const phoneNum = document.createElement('a');
-	phoneNum.setAttribute('href', 'tel:+27 123 4567 890');
-	phoneNum.textContent = '+27 123 4567 890';
-
-	contactDesc.append(phoneNum);
-
-	const email = document.createElement('a');
-	email.setAttribute('href', 'mailto:info@veganfoodtrucksa.com');
-	email.textContent = 'info@veganfoodtrucksa.com';
-
-	contactDesc.append(email);
+	const contactDesc = div('description');
+	contactDesc.append(phone('phoneNum', '+27 123 4567 890'));
+	contactDesc.append(email('email', 'info@veganfoodtrucksa.com'));
 
 	contact.append(contactDesc);
 	restInfo.append(contact);
 
 	// Location
-	const location = component.div('location');
-	location.append(component.txt('category', 'Finding us is part of the fun!'));
+	const location = div('location');
+	location.append(txt('category', 'Finding us is part of the fun!'));
 
-	const locationDesc = component.div('description');
+	const locationDesc = div('description');
 
 	locationDesc.append(
-		component.txt(
+		txt(
 			'locationCont',
 			'Participate in our interactive poll and determine the location of our food truck next week.'
 		)
 	);
 
 	locationDesc.append(
-		component.txt(
+		txt(
 			'locationCont',
 			'We love surprising different neighborhoods and bringing the vegan experience directly to you.'
 		)
@@ -85,14 +71,16 @@ export const aboutUsDiv = () => {
 	location.append(locationDesc);
 
 	location.append(
-		component.btn(
+		btn(
 			'locationPoll',
-			'https://take.quiz-maker.com/poll4850209x621c20Ea-151',
-			'WHERE NEXT?'
+			'WHERE NEXT?',
+			'https://take.quiz-maker.com/poll4850209x621c20Ea-151'
 		)
 	);
 
 	restInfo.append(location);
 
+	aboutUsContainer.append(restInfo);
+
 	return aboutUsContainer;
-};
+}

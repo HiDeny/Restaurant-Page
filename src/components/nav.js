@@ -1,7 +1,7 @@
 import { div, btn } from './components.js';
 import introDiv from './intro.js';
-import { menuDiv } from './menu.js';
-import { aboutUsDiv } from './aboutus.js';
+import menuDiv from './menu.js';
+import aboutUsDiv from './aboutus.js';
 
 export default function nav() {
 	const nav = div('nav');

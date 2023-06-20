@@ -34,6 +34,7 @@ const componentTxt = (className, textDisplayed) => {
 	return txt;
 };
 
+// Menu component
 const menuComponent = (category, name, list, price) => {
 	const component = componentDiv('componentDiv');
 	component.append(componentTxt('category', category));
@@ -44,9 +45,32 @@ const menuComponent = (category, name, list, price) => {
 	return component;
 };
 
+// Phone component
+const phoneComponent = (className, phoneNumber) => {
+	const phone = document.createElement('a');
+	phone.classList.add(className);
+	phone.setAttribute('href', `tel:${phoneNumber}`);
+	phone.textContent = phoneNumber
+
+	return phone;
+}
+
+
+// Mail component
+const emailComponent = (className, emailName) => {
+	const email = document.createElement('a');
+	email.classList.add(className);
+	email.setAttribute('href', `mailto:${emailName}`);
+	email.textContent = emailName;
+
+	return email;
+}
+
 export {
 	componentDiv as div,
 	componentBtn as btn,
 	componentTxt as txt,
 	menuComponent as menuCmp,
+	phoneComponent as phone,
+	emailComponent as email
 };

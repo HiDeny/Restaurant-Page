@@ -1,15 +1,13 @@
-import * as component from './components.js';
+import { div, menuCmp } from './components.js';
 
-export const menuDiv = () => {
-	
-	// Main
-	const menu = component.div('menu');
+export default function menuDiv() {
+	const menu = div('menu');
 
 	// Background
-	menu.append(component.div('blurBack'));
+	menu.append(div('blurBack'));
 
 	// Starter
-	const starter = component.menuCmp(
+	const starter = menuCmp(
 		'Starter',
 		'Grilled Portobello Mushrooms & Chimichurri Sauce',
 		[
@@ -28,7 +26,7 @@ export const menuDiv = () => {
 	menu.append(starter);
 
 	// Main
-	const main = component.menuCmp(
+	const main = menuCmp(
 		'Main',
 		'Chickpea and Vegetable Bunny Chow',
 		[
@@ -51,7 +49,7 @@ export const menuDiv = () => {
 	menu.append(main);
 
 	// Desert
-	const desert = component.menuCmp(
+	const desert = menuCmp(
 		'Desert',
 		'Rooibos-infused Chocolate Brownies',
 		[
