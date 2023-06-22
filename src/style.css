@@ -14,31 +14,9 @@
 }
 
 
-@keyframes slide-right {
-  0% {left: 100% }
-  40% {left: -20px}
-  60% {left: -0.1px;}
-  100% { left: 0px }
-}
-
-@keyframes slide-left {
-  0% {right: 100% }
-  40% {right: -20px}
-  60% {right: -0.1px;}
-  100% { right: 0px }
-}
-
-.slide-right {
-  animation-name: slide-right;
-  animation-duration: 1.5s;
-}
-
-.slide-left {
-  animation-name: slide-left;
-  animation-duration: 1.5s;
-}
-
 html {
+    color: var(--font-color);
+    background-color: antiquewhite;
     font-size: 16px;
     font-family: Helvetica;
     box-sizing: border-box;
@@ -48,48 +26,47 @@ body {
     background-image: url('./asset/img/background1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    height: 105vh;
 }
 
 .content {
     height: 100vh;
+    position: sticky;
+    top: 0px;
 }
-
 
 .nav,
 .main,
 .foot {
-    color: var(--font-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
 .blurBack {
+    z-index: -1;
     height: 100%;
     width: 100%;
-    z-index: -1;
     position: absolute;
+    border-radius: var(--border-radius);
     background-color: rgba(255, 255, 255, .15);  
     backdrop-filter: blur(20px);
-    box-shadow: 3px 11px 21px 10px rgba(0,0,0,0.39);
-    -webkit-box-shadow: 3px 11px 21px 10px rgba(0,0,0,0.39);
-    -moz-box-shadow: 3px 11px 21px 10px rgba(0,0,0,0.39);
+    box-shadow: 1px 5px 20px 7px rgb(0 0 0 / 15%);
+    -webkit-box-shadow: 1px 5px 20px 7px rgb(0 0 0 / 15%);
+    -moz-box-shadow: 1px 5px 20px 7px rgb(0 0 0 / 15%);
 }
 
 /*! NAV */
 .nav {
-  color: var(--font-color);
+  z-index: 2;
   font-size: 0.8rem;
-  position: sticky;
-  top: 10px;
-  border-radius: var(--border-radius);
-  gap: 19px;
   height: 2.6rem;
   width: 17.7rem;
-  margin: auto;
-  margin-top: 20px;  
-  z-index: 2;
+  position: sticky;
+  top: 20px;
+  gap: 19px;
+  margin: auto; 
+  border-radius: var(--border-radius);
 }
 
 .nav > button {
@@ -115,11 +92,9 @@ body {
 
 .main {
     height: 85%;
-    margin: 0;
 }
 
 .intro {
-    color: var(--font-color);
     font-family: 'Bagel Fat One', Helvetica, Arial;
     font-size: 7.5rem;
     position: relative;
@@ -141,7 +116,6 @@ body {
 /*! MENU */
 
 .menu { 
-    overflow: hidden;
     position: relative;
     border-radius: var(--border-radius);
     padding: 5px;
@@ -152,30 +126,29 @@ body {
     gap: 10px;
 }
 
-.componentDiv { 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around; 
-  border-bottom: var(--border);
-  padding: 10px;
-}
-
-.componentDiv > * {
-  margin: 0;
-}
-
 .menu > .componentDiv {
   border: var(--border);
   background-color: rgba(145, 145, 145, 0.21);  
   backdrop-filter: blur(25px);
   border-radius: var(--border-radius);
   margin: 5px;
+  padding: 10px;
 
   display: grid;
   grid-template-columns: 4fr 1fr;
   align-items: center;
 }
 
+.componentDiv { 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; 
+  border-bottom: var(--border);
+}
+
+.componentDiv > * {
+  margin: 0;
+}
 
 
 .category {
@@ -217,7 +190,6 @@ body {
 /*! About us */
 
 .aboutUsContainer {
-  overflow: hidden;
   position: relative;
   border-radius: var(--border-radius);
   padding: 5px;
@@ -226,6 +198,12 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+}
+
+.aboutus > .category,
+.contact > .category, 
+.location > .category {
+  font-size: 1.5rem;
 }
 
 .aboutus {
@@ -249,9 +227,10 @@ body {
 }
 
 .aboutus > .category {
-  align-self: end;
+  align-self: center;
   margin: 0;
 }
+
 
 .missionCont {
   border-bottom: var(--border);
@@ -287,19 +266,22 @@ body {
   width: 50%;
   text-align: center;
 
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   align-items: center;
   justify-content: center;
 }
 
 .contact > .description {
+  align-self: baseline;
   display: grid;
   grid-template-rows: 1fr 1fr;
   gap: 0.5rem
 }
 
+
 .description > a {
+  font-size: 1.1rem;
   color: white;
   text-decoration: none;
 }
@@ -380,7 +362,6 @@ div.location > a {
     height: 2.5rem;
     width: 9.5rem;
     margin: auto;
-    margin-bottom: 10px;
     border-radius: var(--border-radius);
     z-index: 2;
 }
@@ -392,7 +373,6 @@ div.location > a {
     border: var(--border);
     width: 2rem;
     height: 2rem;
-    padding: 5px;
 }
 
 .foot > a > button:hover {
@@ -415,6 +395,37 @@ div.location > a {
 .fbBtn,
 .googleBtn {
   background-position: center;
-  background-size: 70%;
+  background-size: 75%;
   background-repeat: no-repeat;  
 }
+
+
+/* Animation */
+@keyframes slide-right {
+  0% {left: 100% }
+  40% {left: -20px}
+  60% {left: -0.1px;}
+  100% { left: 0px }
+}
+
+@keyframes slide-left {
+  0% {right: 100% }
+  40% {right: -20px}
+  60% {right: -0.1px;}
+  100% { right: 0px }
+}
+
+.slide-right {
+  animation-name: slide-right;
+  animation-duration: 1.5s;
+}
+
+.slide-left {
+  animation-name: slide-left;
+  animation-duration: 1.5s;
+}
+
+
+
+
+

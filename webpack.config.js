@@ -8,7 +8,8 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: 'Restaurant Page',
-		}),
+			favicon: "./src/asset/img/favicon.png"
+		})
 	],
 	output: {
 		filename: '[name].bundle.js',
