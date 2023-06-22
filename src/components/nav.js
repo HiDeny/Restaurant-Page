@@ -3,14 +3,21 @@ import introDiv from './intro.js';
 import menuDiv from './menu.js';
 import aboutUsDiv from './aboutus.js';
 
+
 export default function nav() {
 	const nav = div('nav');
 	nav.append(div('blurBack'));
     
     // DOM
-	const introSetup = introDiv();
-	const menuSetup = menuDiv();
-	const aboutSetup = aboutUsDiv();
+	nav.append(homeBtnLoad());
+	nav.append(menuBtnLoad());
+	nav.append(AboutBtnLoad());
+
+	return nav;
+}
+
+// Home Button
+function homeBtnLoad() {
 
 	// Home button
 	const homeBtn = btn('homeBtn', 'HOME');
@@ -20,28 +27,10 @@ export default function nav() {
 		handleClickHome();
 	};
 
-	nav.append(homeBtn);
-
-	// Menu button
-	const menuBtn = btn('menuBtn', 'MENU');
-
-	menuBtn.onclick = () => {
-		handleClickMenu();
-	};
-
-	nav.append(menuBtn);
-
-	// About us button
-	const AboutBtn = btn('AboutBtn', 'ABOUT US');
-
-	AboutBtn.onclick = () => {
-		handleClickAbout();
-	};
-
-	nav.append(AboutBtn);
-
-	// Handle clicks
+	// Handle Click
 	const handleClickHome = () => {
+		const introSetup = introDiv();
+
 		const currentlyActive = document.querySelector('#activeBtn').className;
         
 		if (currentlyActive !== 'homeBtn') {
@@ -56,6 +45,22 @@ export default function nav() {
 		main.replaceChild(introSetup, main.firstChild);
 	};
 
+	return homeBtn;
+}
+
+
+// Menu Button
+function menuBtnLoad() {
+	const menuSetup = menuDiv();
+
+	// Menu button
+	const menuBtn = btn('menuBtn', 'MENU');
+
+	menuBtn.onclick = () => {
+		handleClickMenu();
+	};
+
+	// Handle Click
 	const handleClickMenu = () => {
 		const currentlyActive = document.querySelector('#activeBtn').className;
         
@@ -74,6 +79,21 @@ export default function nav() {
 		main.replaceChild(menuSetup, main.firstChild);
 	};
 
+
+	return menuBtn;
+}
+
+// About Us Button
+function AboutBtnLoad() {
+	const aboutSetup = aboutUsDiv();
+
+	const AboutBtn = btn('AboutBtn', 'ABOUT US');
+
+	AboutBtn.onclick = () => {
+		handleClickAbout();
+	};
+
+	// Handle Click
 	const handleClickAbout = () => {
 		const currentlyActive = document.querySelector('#activeBtn').className;
 
@@ -89,13 +109,14 @@ export default function nav() {
 		main.replaceChild(aboutSetup, main.firstChild);
 	};
 
-	// Remove active id
-	const removeActive = () => {
-		const currentlyActive = document.querySelector('#activeBtn');
-		currentlyActive.removeAttribute('id', 'activeBtn');
 
-		return currentlyActive;
-	};
-
-	return nav;
+	return AboutBtn;
 }
+
+// Remove active id
+const removeActive = () => {
+	const currentlyActive = document.querySelector('#activeBtn');
+	currentlyActive.removeAttribute('id', 'activeBtn');
+
+	return currentlyActive;
+};
