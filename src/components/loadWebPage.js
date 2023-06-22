@@ -6,13 +6,12 @@ import main from './middle.js';
 import foot from './foot.js';
 
 export default function websiteLoader() {
-    const content = div('content', 'content');
-    document.body.append(content);
+	const content = div('content', 'content');
+	document.body.append(content);
 
-    content.append(nav());
-    content.append(main());
-    content.append(foot());
+	content.append(nav());
+	content.append(main());
+	content.append(foot());
 
-    return content;
+	return content;
 }
-

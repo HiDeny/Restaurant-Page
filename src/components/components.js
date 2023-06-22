@@ -50,11 +50,10 @@ const phoneComponent = (className, phoneNumber) => {
 	const phone = document.createElement('a');
 	phone.classList.add(className);
 	phone.setAttribute('href', `tel:${phoneNumber}`);
-	phone.textContent = phoneNumber
+	phone.textContent = phoneNumber;
 
 	return phone;
-}
-
+};
 
 // Mail component
 const emailComponent = (className, emailName) => {
@@ -64,7 +63,7 @@ const emailComponent = (className, emailName) => {
 	email.textContent = emailName;
 
 	return email;
-}
+};
 
 export {
 	componentDiv as div,
@@ -72,5 +71,5 @@ export {
 	componentTxt as txt,
 	menuComponent as menuCmp,
 	phoneComponent as phone,
-	emailComponent as email
+	emailComponent as email,
 };

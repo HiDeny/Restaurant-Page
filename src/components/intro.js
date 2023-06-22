@@ -13,4 +13,4 @@ export default function introDiv() {
 	introDiv.append(logoPt3);
 
 	return introDiv;
-};
+}

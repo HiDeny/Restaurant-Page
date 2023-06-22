@@ -1,4 +1,4 @@
-import {div, txt, phone, email, btn} from './components.js';
+import { div, txt, phone, email, btn } from './components.js';
 
 export default function aboutUsDiv() {
 	const aboutUsContainer = div('aboutUsContainer');
@@ -6,7 +6,14 @@ export default function aboutUsDiv() {
 	// Background
 	aboutUsContainer.append(div('blurBack'));
 
-	//* About us section
+	aboutUsContainer.append(aboutUs());
+	aboutUsContainer.append(restInfo());
+
+	return aboutUsContainer;
+}
+
+//* About us section
+function aboutUs() {
 	const aboutUs = div('aboutus');
 	aboutUs.append(txt('category', 'Our Mission'));
 
@@ -32,12 +39,22 @@ export default function aboutUsDiv() {
 	missionDesc.append(missionP3);
 
 	aboutUs.append(missionDesc);
-	aboutUsContainer.append(aboutUs);
 
-	//* Restaurant information
+	return aboutUs;
+}
+
+//* Restaurant information
+function restInfo() {
 	const restInfo = div('restInfo');
 
-	// Contact
+	restInfo.append(contact());
+	restInfo.append(location());
+
+	return restInfo;
+}
+
+// Contact
+function contact() {
 	const contact = div('contact');
 	contact.append(txt('category', 'Contact'));
 
@@ -46,9 +63,12 @@ export default function aboutUsDiv() {
 	contactDesc.append(email('email', 'info@veganfoodtrucksa.com'));
 
 	contact.append(contactDesc);
-	restInfo.append(contact);
 
-	// Location
+	return contact;
+}
+
+// Location
+function location() {
 	const location = div('location');
 	location.append(txt('category', 'Finding us is part of the fun!'));
 
@@ -78,9 +98,5 @@ export default function aboutUsDiv() {
 		)
 	);
 
-	restInfo.append(location);
-
-	aboutUsContainer.append(restInfo);
-
-	return aboutUsContainer;
+	return location;
 }

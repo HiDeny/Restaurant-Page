@@ -3,12 +3,11 @@ import introDiv from './intro.js';
 import menuDiv from './menu.js';
 import aboutUsDiv from './aboutus.js';
 
-
 export default function nav() {
 	const nav = div('nav');
 	nav.append(div('blurBack'));
-    
-    // DOM
+
+	// DOM
 	nav.append(homeBtnLoad());
 	nav.append(menuBtnLoad());
 	nav.append(AboutBtnLoad());
@@ -18,7 +17,6 @@ export default function nav() {
 
 // Home Button
 function homeBtnLoad() {
-
 	// Home button
 	const homeBtn = btn('homeBtn', 'HOME');
 	homeBtn.setAttribute('id', 'activeBtn');
@@ -32,22 +30,21 @@ function homeBtnLoad() {
 		const introSetup = introDiv();
 
 		const currentlyActive = document.querySelector('#activeBtn').className;
-        
+
 		if (currentlyActive !== 'homeBtn') {
 			introSetup.classList.add('slide-left');
 		} else {
-            introSetup.classList.remove('slide-left');
-        }
+			introSetup.classList.remove('slide-left');
+		}
 		removeActive();
 
 		homeBtn.setAttribute('id', 'activeBtn');
-        const main = document.querySelector('.main');
+		const main = document.querySelector('.main');
 		main.replaceChild(introSetup, main.firstChild);
 	};
 
 	return homeBtn;
 }
-
 
 // Menu Button
 function menuBtnLoad() {
@@ -63,22 +60,21 @@ function menuBtnLoad() {
 	// Handle Click
 	const handleClickMenu = () => {
 		const currentlyActive = document.querySelector('#activeBtn').className;
-        
+
 		if (currentlyActive === 'homeBtn') {
 			menuSetup.classList.add('slide-right');
 		} else if (currentlyActive === 'AboutBtn') {
 			menuSetup.classList.add('slide-left');
 		} else {
-            menuSetup.classList.remove('slide-right');
-            menuSetup.classList.remove('slide-left');
-        }
+			menuSetup.classList.remove('slide-right');
+			menuSetup.classList.remove('slide-left');
+		}
 		removeActive();
 
 		menuBtn.setAttribute('id', 'activeBtn');
-        const main = document.querySelector('.main');
+		const main = document.querySelector('.main');
 		main.replaceChild(menuSetup, main.firstChild);
 	};
-
 
 	return menuBtn;
 }
@@ -100,15 +96,14 @@ function AboutBtnLoad() {
 		if (currentlyActive !== 'AboutBtn') {
 			aboutSetup.classList.add('slide-right');
 		} else {
-            aboutSetup.classList.remove('slide-right');
-        }
+			aboutSetup.classList.remove('slide-right');
+		}
 		removeActive();
 
 		AboutBtn.setAttribute('id', 'activeBtn');
-        const main = document.querySelector('.main');
+		const main = document.querySelector('.main');
 		main.replaceChild(aboutSetup, main.firstChild);
 	};
-
 
 	return AboutBtn;
 }

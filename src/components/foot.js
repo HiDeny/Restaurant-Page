@@ -2,8 +2,6 @@ import { div, btn } from './components.js';
 
 export default function foot() {
 	const foot = div('foot');
-
-	// Background
 	foot.append(div('blurBack'));
 
 	const igBtn = btn('igBtn', '', 'https://www.instagram.com');

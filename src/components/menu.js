@@ -2,7 +2,6 @@ import { div, menuCmp } from './components.js';
 
 export default function menuDiv() {
 	const menu = div('menu');
-
 	// Background
 	menu.append(div('blurBack'));
 
@@ -68,4 +67,4 @@ export default function menuDiv() {
 	menu.append(desert);
 
 	return menu;
-};
+}
